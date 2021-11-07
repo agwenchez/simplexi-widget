@@ -24,13 +24,13 @@ const StartChat = () => {
         [emailValue, submitting, mounted]
     );
 
-    const [passwordValue, setPasswordValue] = useState('');
+    const [nameValue, setNameValue] = useState('');
     const messageError = useMemo(
         () =>
-            mounted.current && (!passwordValue || passwordValue.length < 5)
+            mounted.current && (!nameValue || nameValue.length < 5)
                 ? 'Name is required and must contain at least 5 characters'
                 : '',
-        [passwordValue, submitting, mounted]
+        [nameValue, submitting, mounted]
     );
 
     const formValid = useMemo(
@@ -48,25 +48,28 @@ const StartChat = () => {
             return;
         }
 
-        console.log('Form values', { emailValue, passwordValue });
-        const values = {email:emailValue, password:passwordValue};
+        console.log('Form values', { emailValue, nameValue });
+        const values = {email:emailValue, name:nameValue};
         localStorage.setItem('user_data', JSON.stringify(values))
 
-        // console.log("Local storage data", localStorage.getItem('user_data'));
-        // setSubmitting(false)
+        setSubmitting(false)
 
-        service
-            ?.sendForm({ email: emailValue, message: passwordValue })
-            .then(() => {
-                router.setRoute('/thankyou');
-            })
-            .catch(() => {
-                setServerError(
-                    `Something went wrong and we couldn't send your form. Please try again later.`
-                );
-            })
-            .then(() => setSubmitting(false));
-    }, [formValid, submitting, emailValue, passwordValue, service]);
+        if( emailValue !== '' || nameValue !== ''){
+            router.setRoute('/chat');
+        }
+
+        // service
+        //     ?.sendForm({ email: emailValue, message: nameValue })
+        //     .then(() => {
+        //         router.setRoute('/thankyou');
+        //     })
+        //     .catch(() => {
+        //         setServerError(
+        //             `Something went wrong and we couldn't send your form. Please try again later.`
+        //         );
+        //     })
+        //     .then(() => setSubmitting(false));
+    }, [formValid, submitting, emailValue, nameValue]);
 
     return (
         <div>
@@ -99,7 +102,7 @@ const StartChat = () => {
                             autoFocus
                             autoComplete="disable"
                             onInput={(e) =>
-                                setPasswordValue(e.currentTarget.value)
+                                setNameValue(e.currentTarget.value)
                             }
                             {...inputProps}
                         />

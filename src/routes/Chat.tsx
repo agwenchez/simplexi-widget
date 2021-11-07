@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact';
-// import { useContext, useState, useMemo, useEffect } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 // import style from './contactForm.css';
 // import { ConfigContext, ServiceContext } from '../AppContext';
 // import Field from '../components/Field';
@@ -7,6 +7,14 @@ import { h, Fragment } from 'preact';
 // import { RouteLink, RouterContext } from '../layout/Router';
 
 const Chat = () => {
+    const [user, setUser] = useState({})
+
+
+    // useEffect(() =>{
+    //     const user_data = localStorage.getItem('user_data')
+    //     setUser(user_data)
+    //     console.log("Local storage data",user);
+    // },[]) 
     // const config = useContext(ConfigContext);
     // const service = useContext(ServiceContext);
     // const router = useContext(RouterContext);
@@ -71,7 +79,7 @@ const Chat = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', }}> 
             <p>
-                <Fragment>Welcome Enock, let's chat</Fragment>
+                <Fragment>Welcome, let's chat</Fragment>
             </p>
 
             <div style={{position:'absolute', bottom: '10px', width:'94%',alignSelf: 'center'}}>

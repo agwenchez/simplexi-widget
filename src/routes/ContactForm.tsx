@@ -57,7 +57,7 @@ const ContactForm = () => {
             <p>{config.text.formSubTitle ??
                 <Fragment>
                     Leave your message and we'll get back to you shortly.
-                    You can also <RouteLink href='/chat'>chat with us</RouteLink>.</Fragment>}</p>
+                    You can also <RouteLink href='/start chat'>chat with us</RouteLink>.</Fragment>}</p>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
