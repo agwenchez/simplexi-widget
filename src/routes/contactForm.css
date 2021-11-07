@@ -1,0 +1,16 @@
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: var(--color-error);
+  margin: 12px 0;
+}

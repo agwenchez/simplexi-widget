@@ -1,0 +1,27 @@
+.root {
+  background: var(--color-bg-secondary);
+  display: flex;
+  padding: 3px 10px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.root h4 {
+  margin: 0;
+}
+.root a {
+  width: 20px;
+  height: 22px;
+  margin: -10px 0px;
+  display: block;
+  background-size: contain;
+}
+.root a.open {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI1NiAyNTYiIGhlaWdodD0iMjU2cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yMDgsMTM0LjRINDhjLTMuNTM0LDAtNi40LTIuODY2LTYuNC02LjRzMi44NjYtNi40LDYuNC02LjRoMTYwYzMuNTM0LDAsNi40LDIuODY2LDYuNCw2LjRTMjExLjUzNCwxMzQuNCwyMDgsMTM0LjR6Ii8+PC9zdmc+");
+}
+.root a.minimized {
+  background-image: url("http://cdn.onlinewebfonts.com/svg/img_523043.png");
+}
+.root a:hover {
+  opacity: var(--hover-opacity)
+}
